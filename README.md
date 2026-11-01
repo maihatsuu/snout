@@ -26,10 +26,10 @@ Each time a sniffer finishes digging, it makes a single roll. That roll picks ei
 | Raiser armor trim | `#minecraft:is_taiga` | any | 1 |
 | Host armor trim | plains, meadow | any | 1 |
 | Shaper armor trim | cherry grove | any | 1 |
-| Tide armor trim | any | any | 1 |
-| Wayfinder armor trim | any | any | 1 |
+| Tide armor trim | `#minecraft:is_ocean` | any | 1 |
+| Wayfinder armor trim | `#c:is_snowy` | any | 1 |
 
-Weights are relative to everything that's valid at the dig spot. For example, a sniffer digging grass in plains can roll the seeds (20), host (1), tide (1) or wayfinder (1), so it finds a trim about 1 time in 8.
+Weights are relative to everything that's valid at the dig spot. For example, a sniffer digging grass in plains can roll the seeds (20) or host (1), so it finds a trim about 1 time in 21.
 
 The biome and block are checked where the sniffer digs, not where it hatched. The vanilla dig cooldown is unchanged.
 

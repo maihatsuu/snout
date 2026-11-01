@@ -97,12 +97,28 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:tide_armor_trim_smithing_template",
-          "weight": 1
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_ocean"
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:wayfinder_armor_trim_smithing_template",
-          "weight": 1
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_snowy"
+              }
+            }
+          ]
         }
       ]
     }
