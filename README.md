@@ -28,10 +28,13 @@ Each time a sniffer finishes digging, it makes a single roll. That roll picks ei
 | Shaper armor trim | cherry grove | any | 1 |
 | Tide armor trim | `#minecraft:is_ocean` | any | 1 |
 | Wayfinder armor trim | `#c:is_snowy` | any | 1 |
+| Netherite upgrade | `#minecraft:is_nether` | soul sand, soul soil | 1 |
 
 Weights are relative to everything that's valid at the dig spot. For example, a sniffer digging grass in plains can roll the seeds (20) or host (1), so it finds a trim about 1 time in 21.
 
 The biome and block are checked where the sniffer digs, not where it hatched. The vanilla dig cooldown is unchanged.
+
+Snout adds soul sand and soul soil to the blocks sniffers can dig (the `minecraft:sniffer_diggable_block` tag), so a sniffer taken to the Nether can dig for netherite upgrade templates.
 
 ## Customizing with a datapack
 
@@ -76,7 +79,7 @@ The table is a normal loot table. Its first entry pulls in the vanilla sniffer t
 - Leave out the condition to make an item droppable anywhere.
 - Keep the `minecraft:loot_table` entry, or sniffers will stop dropping seeds.
 
-Sniffers can only dig blocks in the `minecraft:sniffer_diggable_block` tag. To make them dig a new block, add it to that tag in your datapack.
+Sniffers can only dig blocks in the `minecraft:sniffer_diggable_block` tag. To make them dig a new block, add it to that tag in your datapack. Snout adds soul sand and soul soil to this tag; a datapack that sets `"replace": true` on the tag removes them.
 
 Changes that other mods or datapacks make to the vanilla `minecraft:gameplay/sniffer_digging` table still apply, because Snout's table includes it.
 
