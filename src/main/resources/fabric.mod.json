@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "snout",
+	"version": "${version}",
+	"name": "Snout",
+	"description": "Sniffers dig up extra finds, such as armor trims, depending on the biome and the block they dig. Finds come from a datapack-editable loot table. Server-side only.",
+	"authors": [
+		"maihatsuu"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/snout/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"maihatsuu.snout.Snout"
+		]
+	},
+	"mixins": [
+		"snout.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

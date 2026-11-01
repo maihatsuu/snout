@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "maihatsuu.snout.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"SnifferMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
