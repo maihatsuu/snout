@@ -3,9 +3,10 @@
   "values": [
     "minecraft:clay",
     "minecraft:end_stone",
+    "minecraft:gravel",
     "minecraft:sand",
     "minecraft:sculk",
-    "minecraft:suspicious_gravel",
-    "minecraft:suspicious_sand"
+    "minecraft:soul_sand",
+    "minecraft:soul_soil"
   ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Snout's loot tables, dig tags and README finds tables from the spreadsheet.
+"""Generate Snout's loot table, dig tag and README finds table from the spreadsheet.
 
 Usage (from the repo root):
     python3 scripts/xlsx_to_loot.py ["../Sniffer Loot Tables.xlsx"]
@@ -9,14 +9,12 @@ Spreadsheet: first sheet, header row, then one row per find:
 - Item: display name ("Echo Shard", "Wild Armor Trim"); see ITEM_ALIASES for names that differ from the ID.
 - Count: "1" or a range like "2-8".
 - Biome / Diggable Block: comma-separated display names, or an entry in BIOME_ALIASES.
-- Rows whose biomes are all Nether biomes go in the Nether table; everything else in the overworld table.
+- Every row becomes one weighted entry in a single table, with a location_check on its biome and block.
 
 Writes (relative to the repo root):
     src/main/resources/data/snout/loot_table/gameplay/sniffer_digging.json
-    src/main/resources/data/snout/loot_table/gameplay/sniffer_digging_nether.json
-    src/main/resources/data/snout/tags/block/nether_sniffer_diggable.json
-    src/main/resources/data/minecraft/tags/block/sniffer_diggable_block.json
-    README.md (between the <!-- generated:... --> markers)
+    src/main/resources/data/minecraft/tags/block/sniffer_diggable_block.json (blocks the rows use, beyond vanilla)
+    README.md (between the <!-- generated:finds --> markers)
 
 IDs are checked against the Minecraft jar in the Fabric Loom cache (run ./gradlew build once first).
 Requires openpyxl (pip install --user openpyxl) and a JDK (javap) for the ID check.
@@ -43,17 +41,16 @@ ITEM_ALIASES = {
     "Otherside Music Disc": "music_disc_otherside",
     "Relic Music Disc": "music_disc_relic",
     "Netherite Upgrade": "netherite_upgrade_smithing_template",
+    "Bottle o' Enchanting": "experience_bottle",
+    "Nether Quartz": "quartz",
 }
-# Values are a single tag (used as-is when it's the only biome) and its members (used inside lists,
-# because 1.21.1 biome/block lists can't contain tags).
+# Spreadsheet names for vanilla biome tags. Used as-is when it's the only biome in a cell; inside a list it's
+# expanded to its members (read from the game jar), because 1.21.1 biome/block lists can't contain tags.
 BIOME_ALIASES = {
-    "Ocean (all variants)": ("#minecraft:is_ocean", [
-        "ocean", "deep_ocean", "frozen_ocean", "deep_frozen_ocean", "cold_ocean",
-        "deep_cold_ocean", "lukewarm_ocean", "deep_lukewarm_ocean", "warm_ocean"]),
-    "The End (all biomes)": ("#minecraft:is_end", [
-        "the_end", "end_highlands", "end_midlands", "small_end_islands", "end_barrens"]),
+    "Ocean (all variants)": "is_ocean",
+    "The End (all biomes)": "is_end",
+    "Overworld (all biomes)": "is_overworld",
 }
-NETHER_BIOMES = {"nether_wastes", "soul_sand_valley", "crimson_forest", "warped_forest", "basalt_deltas"}
 VANILLA_DIG = ["dirt", "grass_block", "podzol", "coarse_dirt", "rooted_dirt", "moss_block", "mud",
                "muddy_mangrove_roots"]
 SEEDS_WEIGHT = 20
@@ -65,6 +62,8 @@ README_SHORT = {
                                 "snowy taiga and taiga, where trail ruins generate."),
     "Coarse Dirt, Dirt, Grass Block, Moss Block, Mud, Muddy Mangrove Roots, Rooted Dirt, Podzol":
         ("vanilla dig blocks²", None),
+    "Coarse Dirt, Dirt, Grass Block, Moss Block, Mud, Muddy Mangrove Roots, Rooted Dirt, Podzol, Sand, Gravel":
+        ("vanilla dig blocks², sand, gravel", None),
 }
 VANILLA_FOOTNOTE = ("² Dirt, grass block, podzol, coarse dirt, rooted dirt, moss block, mud and "
                     "muddy mangrove roots.")
@@ -82,6 +81,9 @@ def known_ids():
     with zipfile.ZipFile(jar) as z:
         biomes = {os.path.basename(n)[:-5] for n in z.namelist()
                   if n.startswith("data/minecraft/worldgen/biome/") and n.endswith(".json")}
+        tag_dir = "data/minecraft/tags/worldgen/biome/"
+        biome_tags = {n[len(tag_dir):-5]: json.loads(z.read(n))["values"] for n in z.namelist()
+                      if n.startswith(tag_dir) and n.endswith(".json")}
 
     def strings(cls):
         out = subprocess.run(["javap", "-c", "-constants", "-cp", jar, cls],
@@ -89,7 +91,7 @@ def known_ids():
         return set(re.findall(r"String ([a-z0-9_]+)$", out, re.M))
 
     things = strings("net.minecraft.world.item.Items") | strings("net.minecraft.world.level.block.Blocks")
-    return biomes, things
+    return biomes, things, biome_tags
 
 
 def snake(s):
@@ -108,7 +110,7 @@ class Converter:
     def check(self, kind, name, i):
         if self.ids is None:
             return
-        biomes, things = self.ids
+        biomes, things, _ = self.ids
         if i not in (biomes if kind == "biome" else things):
             self.errors.append(f"unknown {kind} '{name}' (looked for minecraft:{i})")
 
@@ -122,16 +124,31 @@ class Converter:
         self.check("item", name, i)
         return "minecraft:" + i
 
+    def tag_members(self, tag):
+        """Plain biome IDs in a vanilla biome tag, following nested tags."""
+        if self.ids is None:
+            self.errors.append(f"can't expand #minecraft:{tag} without the Minecraft jar")
+            return []
+        tags = self.ids[2]
+        if tag not in tags:
+            self.errors.append(f"unknown biome tag #minecraft:{tag}")
+            return []
+        out = []
+        for v in tags[tag]:
+            v = v.removeprefix("minecraft:")
+            out += self.tag_members(v[len("#minecraft:"):]) if v.startswith("#") else [v]
+        return out
+
     def biomes(self, cell):
         """Returns (json value, plain biome IDs)."""
         names = [x.strip() for x in str(cell).split(",") if x.strip()]
         if len(names) == 1 and names[0] in BIOME_ALIASES:
-            tag, members = BIOME_ALIASES[names[0]]
-            return tag, members
+            tag = BIOME_ALIASES[names[0]]
+            return "#minecraft:" + tag, self.tag_members(tag)
         ids = []
         for n in names:
             if n in BIOME_ALIASES:
-                ids += BIOME_ALIASES[n][1]
+                ids += [i for i in self.tag_members(BIOME_ALIASES[n]) if i not in ids]
             else:
                 ids.append(snake(n))
                 self.check("biome", n, snake(n))
@@ -167,11 +184,9 @@ def dump(rel, obj):
         f.write(json.dumps(obj, indent=2) + "\n")
 
 
-def readme_table(rows, nether):
+def readme_table(rows):
     groups, notes = {}, []
     for r in rows:
-        if r["nether"] != nether:
-            continue
         b, bnote = README_SHORT.get(r["biome"], (r["biome"], None))
         k, knote = README_SHORT.get(r["block"], (r["block"], None))
         for note in (bnote, knote):
@@ -180,12 +195,10 @@ def readme_table(rows, nether):
         key = (r["count"].replace("-", "–"), b, k, r["weight"])
         groups.setdefault(key, []).append(r["name"])
     lines = ["| Find | Count | Biome | Dug block | Weight (each) |", "|---|---|---|---|---|"]
-    if not nether:
-        lines.append(f"| Vanilla seeds | 1 | any | vanilla dig blocks² only | {SEEDS_WEIGHT} |")
+    lines.append(f"| Vanilla seeds | 1 | any | vanilla dig blocks² only | {SEEDS_WEIGHT} |")
     for (c, b, k, w), names in groups.items():
         lines.append(f"| {', '.join(names)} | {c} | {b} | {k} | {w} |")
-    uses_vanilla = not nether or any("²" in line for line in lines)
-    footer = notes + ([VANILLA_FOOTNOTE] if uses_vanilla else [])
+    footer = notes + [VANILLA_FOOTNOTE]
     return "\n".join(lines) + ("\n\n" + "\n".join(footer) if footer else "")
 
 
@@ -208,7 +221,7 @@ def main():
     conv = Converter(known_ids())
     ws = openpyxl.load_workbook(xlsx).worksheets[0]
 
-    overworld, nether, dig_over, dig_nether, rows = [], [], [], [], []
+    entries, dig, rows = [], [], []
     for n, r in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
         if not r or not r[0]:
             continue
@@ -226,9 +239,7 @@ def main():
                                "count": lo if lo == hi else {"type": "minecraft:uniform", "min": lo, "max": hi}}]
         pred = {}
         if biome:
-            pred["biomes"], biome_ids = conv.biomes(biome)
-        else:
-            biome_ids = []
+            pred["biomes"], _ = conv.biomes(biome)
         block_ids = []
         if block:
             blocks_json, block_ids = conv.blocks(block)
@@ -236,12 +247,10 @@ def main():
         if pred:
             e["conditions"] = [{"condition": "minecraft:location_check", "predicate": pred}]
 
-        is_nether = bool(biome_ids) and all(b in NETHER_BIOMES for b in biome_ids)
-        (nether if is_nether else overworld).append(e)
-        target = dig_nether if is_nether else dig_over
-        target += [b for b in block_ids if b not in target]
+        entries.append(e)
+        dig += [b for b in block_ids if b not in dig]
         rows.append({"name": name, "count": f"{lo}-{hi}" if lo != hi else str(lo), "biome": str(biome or "any"),
-                     "block": str(block or "any"), "weight": weight, "nether": is_nether})
+                     "block": str(block or "any"), "weight": weight})
 
     if conv.errors:
         print("Spreadsheet errors (nothing written):", *conv.errors, sep="\n  ", file=sys.stderr)
@@ -250,27 +259,21 @@ def main():
     seeds = {"type": "minecraft:loot_table", "value": "minecraft:gameplay/sniffer_digging", "weight": SEEDS_WEIGHT,
              "conditions": [{"condition": "minecraft:location_check",
                              "predicate": {"block": {"blocks": ["minecraft:" + b for b in VANILLA_DIG]}}}]}
-    dump("snout/loot_table/gameplay/sniffer_digging.json", table([seeds] + overworld, "snout:gameplay/sniffer_digging"))
-    dump("snout/loot_table/gameplay/sniffer_digging_nether.json", table(nether, "snout:gameplay/sniffer_digging_nether"))
-    dump("snout/tags/block/nether_sniffer_diggable.json", {"values": ["minecraft:" + b for b in sorted(dig_nether)]})
-    extra = sorted(b for b in dig_over if b not in VANILLA_DIG)
+    dump("snout/loot_table/gameplay/sniffer_digging.json", table([seeds] + entries, "snout:gameplay/sniffer_digging"))
+    extra = sorted(b for b in dig if b not in VANILLA_DIG)
     dump("minecraft/tags/block/sniffer_diggable_block.json",
          {"replace": False, "values": ["minecraft:" + b for b in extra]})
 
     with open(README) as f:
         text = f.read()
-    over_intro = (f"Besides the vanilla dig blocks, Snout lets sniffers dig {nice(extra)}. " if extra else "") + \
+    intro = (f"Besides the vanilla dig blocks, Snout lets sniffers dig {nice(extra)}. " if extra else "") + \
         "Vanilla seeds (torchflower seeds or pitcher pod) only come from the vanilla dig blocks."
-    text = replace_generated(text, "overworld", over_intro + "\n\n" + readme_table(rows, False))
-    text = replace_generated(text, "nether",
-                             f"In Nether biomes, sniffers can only dig {nice(sorted(dig_nether))}, and roll a separate "
-                             f"table with no seeds:\n\n" + readme_table(rows, True))
+    text = replace_generated(text, "finds", intro + "\n\n" + readme_table(rows))
     with open(README, "w") as f:
         f.write(text)
 
-    print(f"overworld: {len(overworld)} finds, nether: {len(nether)} finds")
-    print(f"overworld dig additions: {', '.join(extra) or 'none'}")
-    print(f"nether dig blocks: {', '.join(sorted(dig_nether)) or 'none'}")
+    print(f"{len(entries)} finds")
+    print(f"dig additions: {', '.join(extra) or 'none'}")
     print("Check the hand-written odds examples in README.md if weights changed.")
 
 

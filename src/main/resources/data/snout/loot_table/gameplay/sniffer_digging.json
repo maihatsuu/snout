@@ -31,563 +31,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:globe_banner_pattern",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:plains",
-                "block": {
-                  "blocks": [
-                    "minecraft:coarse_dirt",
-                    "minecraft:dirt",
-                    "minecraft:grass_block",
-                    "minecraft:moss_block",
-                    "minecraft:mud",
-                    "minecraft:muddy_mangrove_roots",
-                    "minecraft:rooted_dirt",
-                    "minecraft:podzol"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:burn_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:danger_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:friend_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:heart_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:heartbreak_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:howl_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:sheaf_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:archer_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:miner_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:prize_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:skull_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:arms_up_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:brewer_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:angler_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:warm_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:shelter_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:warm_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:snort_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:warm_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:blade_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:cold_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:explorer_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:cold_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:mourner_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:cold_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:plenty_pottery_sherd",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:cold_ocean",
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:disc_fragment_5",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark",
-                "block": {
-                  "blocks": "minecraft:sculk"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:echo_shard",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 8
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark",
-                "block": {
-                  "blocks": "minecraft:sculk"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:heart_of_the_sea",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:beach",
-                  "minecraft:snowy_beach"
-                ],
-                "block": {
-                  "blocks": "minecraft:sand"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:music_disc_otherside",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark",
-                "block": {
-                  "blocks": "minecraft:sculk"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:music_disc_relic",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "minecraft:jungle",
-                  "minecraft:old_growth_birch_forest",
-                  "minecraft:old_growth_pine_taiga",
-                  "minecraft:old_growth_spruce_taiga",
-                  "minecraft:snowy_taiga",
-                  "minecraft:taiga"
-                ],
-                "block": {
-                  "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:spore_blossom",
           "weight": 10,
           "functions": [
@@ -617,36 +60,85 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:sentry_armor_trim_smithing_template",
-          "weight": 1,
+          "name": "minecraft:rooted_dirt",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
           "conditions": [
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "biomes": [
-                  "minecraft:plains",
-                  "minecraft:savanna",
-                  "minecraft:desert",
-                  "minecraft:snowy_plains",
-                  "minecraft:taiga",
-                  "minecraft:meadow",
-                  "minecraft:cherry_grove",
-                  "minecraft:grove",
-                  "minecraft:snowy_slopes",
-                  "minecraft:jagged_peaks",
-                  "minecraft:frozen_peaks",
-                  "minecraft:stony_peaks"
-                ],
+                "biomes": "minecraft:lush_caves",
                 "block": {
                   "blocks": [
-                    "minecraft:coarse_dirt",
-                    "minecraft:dirt",
-                    "minecraft:grass_block",
-                    "minecraft:moss_block",
-                    "minecraft:mud",
-                    "minecraft:muddy_mangrove_roots",
-                    "minecraft:rooted_dirt",
-                    "minecraft:podzol"
+                    "minecraft:clay",
+                    "minecraft:moss_block"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:moss_block",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:lush_caves",
+                "block": {
+                  "blocks": [
+                    "minecraft:clay",
+                    "minecraft:moss_block"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone_meal",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:lush_caves",
+                "block": {
+                  "blocks": [
+                    "minecraft:clay",
+                    "minecraft:moss_block"
                   ]
                 }
               }
@@ -705,75 +197,358 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:coast_armor_trim_smithing_template",
+          "name": "minecraft:raw_iron",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_copper",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_gold",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:feather",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_overworld",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol",
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:globe_banner_pattern",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:plains",
+                "block": {
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sentry_armor_trim_smithing_template",
           "weight": 1,
           "conditions": [
             {
               "condition": "minecraft:location_check",
               "predicate": {
                 "biomes": [
-                  "minecraft:ocean",
-                  "minecraft:deep_ocean",
-                  "minecraft:frozen_ocean",
-                  "minecraft:deep_frozen_ocean",
-                  "minecraft:cold_ocean",
-                  "minecraft:deep_cold_ocean",
-                  "minecraft:lukewarm_ocean",
-                  "minecraft:deep_lukewarm_ocean",
-                  "minecraft:warm_ocean",
-                  "minecraft:beach",
-                  "minecraft:snowy_beach"
+                  "minecraft:plains",
+                  "minecraft:savanna",
+                  "minecraft:desert",
+                  "minecraft:snowy_plains",
+                  "minecraft:taiga",
+                  "minecraft:meadow",
+                  "minecraft:cherry_grove",
+                  "minecraft:grove",
+                  "minecraft:snowy_slopes",
+                  "minecraft:jagged_peaks",
+                  "minecraft:frozen_peaks",
+                  "minecraft:stony_peaks"
                 ],
                 "block": {
-                  "blocks": "minecraft:sand"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:dune_armor_trim_smithing_template",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:desert",
-                "block": {
-                  "blocks": "minecraft:sand"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:ward_armor_trim_smithing_template",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark",
-                "block": {
-                  "blocks": "minecraft:sculk"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:silence_armor_trim_smithing_template",
-          "weight": 1,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark",
-                "block": {
-                  "blocks": "minecraft:sculk"
+                  "blocks": [
+                    "minecraft:coarse_dirt",
+                    "minecraft:dirt",
+                    "minecraft:grass_block",
+                    "minecraft:moss_block",
+                    "minecraft:mud",
+                    "minecraft:muddy_mangrove_roots",
+                    "minecraft:rooted_dirt",
+                    "minecraft:podzol"
+                  ]
                 }
               }
             }
@@ -813,6 +588,1045 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:chorus_flower",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_end",
+                "block": {
+                  "blocks": "minecraft:end_stone"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dragon_head",
+          "weight": 5,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#minecraft:is_end",
+                "block": {
+                  "blocks": "minecraft:end_stone"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:heart_of_the_sea",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:beach",
+                  "minecraft:snowy_beach"
+                ],
+                "block": {
+                  "blocks": "minecraft:sand"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:beach",
+                  "minecraft:snowy_beach"
+                ],
+                "block": {
+                  "blocks": "minecraft:sand"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nugget",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:beach",
+                  "minecraft:snowy_beach"
+                ],
+                "block": {
+                  "blocks": "minecraft:sand"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dune_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": "minecraft:sand"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coast_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:deep_frozen_ocean",
+                  "minecraft:deep_cold_ocean",
+                  "minecraft:deep_ocean",
+                  "minecraft:deep_lukewarm_ocean",
+                  "minecraft:frozen_ocean",
+                  "minecraft:ocean",
+                  "minecraft:cold_ocean",
+                  "minecraft:lukewarm_ocean",
+                  "minecraft:warm_ocean",
+                  "minecraft:beach",
+                  "minecraft:snowy_beach"
+                ],
+                "block": {
+                  "blocks": "minecraft:sand"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:disc_fragment_5",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:echo_shard",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_otherside",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ward_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:silence_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:candle",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "minecraft:sculk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:piglin_banner_pattern",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_upgrade_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:snout_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rib_armor_trim_smithing_template",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_wart",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crimson_nylium",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_nylium",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:quartz",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:nether_wastes",
+                  "minecraft:soul_sand_valley",
+                  "minecraft:crimson_forest",
+                  "minecraft:warped_forest",
+                  "minecraft:basalt_deltas"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:soul_sand",
+                    "minecraft:soul_soil"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blade_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:cold_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:explorer_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:cold_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mourner_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:cold_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:plenty_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:cold_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:archer_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:miner_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:prize_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:skull_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:arms_up_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:brewer_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:desert",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:burn_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:danger_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:friend_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:heart_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:heartbreak_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:howl_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sheaf_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_relic",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:jungle",
+                  "minecraft:old_growth_birch_forest",
+                  "minecraft:old_growth_pine_taiga",
+                  "minecraft:old_growth_spruce_taiga",
+                  "minecraft:snowy_taiga",
+                  "minecraft:taiga"
+                ],
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:wayfinder_armor_trim_smithing_template",
           "weight": 1,
           "conditions": [
@@ -829,8 +1643,8 @@
                 ],
                 "block": {
                   "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
+                    "minecraft:sand",
+                    "minecraft:gravel"
                   ]
                 }
               }
@@ -855,8 +1669,8 @@
                 ],
                 "block": {
                   "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
+                    "minecraft:sand",
+                    "minecraft:gravel"
                   ]
                 }
               }
@@ -881,8 +1695,8 @@
                 ],
                 "block": {
                   "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
+                    "minecraft:sand",
+                    "minecraft:gravel"
                   ]
                 }
               }
@@ -907,8 +1721,65 @@
                 ],
                 "block": {
                   "blocks": [
-                    "minecraft:suspicious_sand",
-                    "minecraft:suspicious_gravel"
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:angler_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:warm_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shelter_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:warm_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:snort_pottery_sherd",
+          "weight": 1,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:warm_ocean",
+                "block": {
+                  "blocks": [
+                    "minecraft:sand",
+                    "minecraft:gravel"
                   ]
                 }
               }
