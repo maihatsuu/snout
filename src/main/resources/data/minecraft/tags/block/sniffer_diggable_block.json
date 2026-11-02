@@ -1,7 +1,11 @@
 {
   "replace": false,
   "values": [
-    "minecraft:soul_sand",
-    "minecraft:soul_soil"
+    "minecraft:clay",
+    "minecraft:end_stone",
+    "minecraft:sand",
+    "minecraft:sculk",
+    "minecraft:suspicious_gravel",
+    "minecraft:suspicious_sand"
   ]
 }

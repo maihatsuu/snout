@@ -15,32 +15,62 @@ Snout is **server-side only**. Install it on the server (or in singleplayer); pl
 
 ## Finds
 
-Each time a sniffer finishes digging, it makes a single roll. That roll picks either the vanilla seeds (torchflower seeds or pitcher pod) or one of the finds that's valid at that spot:
+Each time a sniffer finishes digging, it makes a single roll from one of two loot tables, chosen by the biome where it digs. The biome and block are checked where the sniffer digs, not where it hatched. The vanilla dig cooldown is unchanged.
 
-| Find | Biome | Dug block | Weight |
-|---|---|---|---|
-| Vanilla seeds | any | any | 20 |
-| Wild armor trim | `#minecraft:is_jungle` | any | 1 |
-| Coast armor trim | swamp, mangrove swamp | any | 1 |
-| Dune armor trim | `#minecraft:is_badlands` | any | 1 |
-| Raiser armor trim | `#minecraft:is_taiga` | any | 1 |
-| Host armor trim | plains, meadow | any | 1 |
-| Shaper armor trim | cherry grove | any | 1 |
-| Tide armor trim | `#minecraft:is_ocean` | any | 1 |
-| Wayfinder armor trim | `#c:is_snowy` | any | 1 |
-| Netherite upgrade | `#minecraft:is_nether` | soul sand, soul soil | 1 |
+Weights are relative to everything that's valid at the dig spot. If nothing is valid there, the dig drops nothing.
 
-Weights are relative to everything that's valid at the dig spot. For example, a sniffer digging grass in plains can roll the seeds (20) or host (1), so it finds a trim about 1 time in 21.
+### Overworld and the End
 
-The biome and block are checked where the sniffer digs, not where it hatched. The vanilla dig cooldown is unchanged.
+<!-- generated:overworld -->
+Besides the vanilla dig blocks, Snout lets sniffers dig clay, end stone, sand, sculk, suspicious gravel and suspicious sand. Vanilla seeds (torchflower seeds or pitcher pod) only come from the vanilla dig blocks.
 
-Snout adds soul sand and soul soil to the blocks sniffers can dig (the `minecraft:sniffer_diggable_block` tag), so a sniffer taken to the Nether can dig for netherite upgrade templates.
+| Find | Count | Biome | Dug block | Weight (each) |
+|---|---|---|---|---|
+| Vanilla seeds | 1 | any | vanilla dig blocks² only | 20 |
+| Globe Banner Pattern | 1 | Plains | vanilla dig blocks² | 1 |
+| Burn Pottery Sherd, Danger Pottery Sherd, Friend Pottery Sherd, Heart Pottery Sherd, Heartbreak Pottery Sherd, Howl Pottery Sherd, Sheaf Pottery Sherd, Relic Music Disc, Wayfinder Armor Trim, Raiser Armor Trim, Shaper Armor Trim, Host Armor Trim | 1 | Trail ruins biomes¹ | Suspicious Sand, Suspicious Gravel | 1 |
+| Archer Pottery Sherd, Miner Pottery Sherd, Prize Pottery Sherd, Skull Pottery Sherd, Arms Up Pottery Sherd, Brewer Pottery Sherd | 1 | Desert | Suspicious Sand, Suspicious Gravel | 1 |
+| Angler Pottery Sherd, Shelter Pottery Sherd, Snort Pottery Sherd | 1 | Warm Ocean | Suspicious Sand, Suspicious Gravel | 1 |
+| Blade Pottery Sherd, Explorer Pottery Sherd, Mourner Pottery Sherd, Plenty Pottery Sherd | 1 | Cold Ocean | Suspicious Sand, Suspicious Gravel | 1 |
+| Disc Fragment, Otherside Music Disc, Ward Armor Trim, Silence Armor Trim | 1 | Deep Dark | Sculk | 1 |
+| Echo Shard | 2–8 | Deep Dark | Sculk | 10 |
+| Heart of the Sea | 1 | Beach, Snowy Beach | Sand | 1 |
+| Spore Blossom | 2–8 | Lush Caves | Clay, Moss Block | 10 |
+| Sentry Armor Trim | 1 | Plains, Savanna, Desert, Snowy Plains, Taiga, Meadow, Cherry Grove, Grove, Snowy Slopes, Jagged Peaks, Frozen Peaks, Stony Peaks | vanilla dig blocks² | 1 |
+| Vex Armor Trim | 1 | Dark Forest | vanilla dig blocks² | 1 |
+| Wild Armor Trim | 1 | Jungle | vanilla dig blocks² | 1 |
+| Coast Armor Trim | 1 | Ocean (all variants), Beach, Snowy Beach | Sand | 1 |
+| Dune Armor Trim | 1 | Desert | Sand | 1 |
+| Eye Armor Trim, Spire Armor Trim | 1 | The End (all biomes) | End Stone | 1 |
+
+¹ Jungle, old growth birch forest, old growth pine taiga, old growth spruce taiga, snowy taiga and taiga, where trail ruins generate.
+² Dirt, grass block, podzol, coarse dirt, rooted dirt, moss block, mud and muddy mangrove roots.
+<!-- /generated:overworld -->
+
+For example, a sniffer digging grass in plains can roll the seeds (20), the globe banner pattern (1) or the sentry trim (1), so it finds something other than seeds about 1 time in 11. Digging sculk in the deep dark gives echo shards 10 times in 14.
+
+### Nether
+
+<!-- generated:nether -->
+In Nether biomes, sniffers can only dig soul sand and soul soil, and roll a separate table with no seeds:
+
+| Find | Count | Biome | Dug block | Weight (each) |
+|---|---|---|---|---|
+| Snout Banner Pattern, Netherite Upgrade, Snout Armor Trim, Rib Armor Trim | 1 | Nether Wastes, Soul Sand Valley, Crimson Forest, Warped Forest | Soul Sand, Soul Soil | 1 |
+<!-- /generated:nether -->
+
+Every dig on soul sand or soul soil in these biomes gives one of the four finds.
 
 ## Customizing with a datapack
 
-The finds live in `data/snout/loot_table/gameplay/sniffer_digging.json`. To replace them, put a file at the same path in a datapack and run `/reload`.
+The finds live in two loot tables:
 
-The table is a normal loot table. Its first entry pulls in the vanilla sniffer table, and each find is an item entry with an optional `minecraft:location_check` condition:
+- `data/snout/loot_table/gameplay/sniffer_digging.json` for everywhere outside the Nether
+- `data/snout/loot_table/gameplay/sniffer_digging_nether.json` for Nether biomes
+
+To replace either, put a file at the same path in a datapack and run `/reload`.
+
+These are normal loot tables. The overworld table's first entry pulls in the vanilla sniffer table, and each find is an item entry with an optional `minecraft:location_check` condition:
 
 ```json
 {
@@ -77,9 +107,18 @@ The table is a normal loot table. Its first entry pulls in the vanilla sniffer t
 - `biomes` takes a biome ID, a biome tag (`#minecraft:is_forest`) or a list.
 - `block.blocks` takes a block ID, a block tag (`#minecraft:dirt`) or a list. You can add `block.state` to match block state properties.
 - Leave out the condition to make an item droppable anywhere.
-- Keep the `minecraft:loot_table` entry, or sniffers will stop dropping seeds.
+- In the overworld table, keep the `minecraft:loot_table` entry, or sniffers will stop dropping seeds. Its condition limits seeds to the vanilla dig blocks.
+- A `biomes` or `blocks` list can't contain tags in 1.21.1. Use either a single tag or a list of IDs.
 
-Sniffers can only dig blocks in the `minecraft:sniffer_diggable_block` tag. To make them dig a new block, add it to that tag in your datapack. Snout adds soul sand and soul soil to this tag; a datapack that sets `"replace": true` on the tag removes them.
+Which blocks sniffers can dig, and where the Nether rules apply, are also tags:
+
+| Tag | Default | Controls |
+|---|---|---|
+| `snout:nether_digging` (biome) | `#minecraft:is_nether` | Biomes that use the Nether dig list and loot table |
+| `snout:nether_sniffer_diggable` (block) | soul sand, soul soil | Blocks sniffers can dig in those biomes |
+| `minecraft:sniffer_diggable_block` (block) | vanilla dig blocks, plus sand, suspicious sand, suspicious gravel, clay, sculk, end stone | Blocks sniffers can dig everywhere else |
+
+Add to a tag in your datapack to extend it, or set `"replace": true` to replace it.
 
 Changes that other mods or datapacks make to the vanilla `minecraft:gameplay/sniffer_digging` table still apply, because Snout's table includes it.
 
@@ -93,7 +132,7 @@ Changes that other mods or datapacks make to the vanilla `minecraft:gameplay/sni
 }
 ```
 
-Set `extraFinds` to `false` to make sniffers use the vanilla loot table only. Restart the game or server after changing it.
+Set `extraFinds` to `false` to make sniffers fully vanilla: they use the vanilla loot table and dig list everywhere, and can't dig in the Nether. Restart the game or server after changing it.
 
 ## Building
 
