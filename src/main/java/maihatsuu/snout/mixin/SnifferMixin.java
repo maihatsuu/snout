@@ -31,7 +31,7 @@ public abstract class SnifferMixin {
 			)
 	)
 	private ResourceKey<LootTable> snout$useSnoutTable(ResourceKey<LootTable> original) {
-		return Snout.CONFIG.extraFinds ? Snout.SNIFFER_DIGGING : original;
+		return Snout.SNIFFER_DIGGING;
 	}
 
 	/**
@@ -47,7 +47,7 @@ public abstract class SnifferMixin {
 			index = 1
 	)
 	private Object snout$moveOriginToDugBlock(LootContextParam<?> param, Object value) {
-		if (param == LootContextParams.ORIGIN && Snout.CONFIG.extraFinds) {
+		if (param == LootContextParams.ORIGIN) {
 			return Vec3.atCenterOf(getHeadBlock().below());
 		}
 		return value;

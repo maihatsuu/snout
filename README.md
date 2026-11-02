@@ -114,18 +114,6 @@ Sniffers can only dig blocks in the `minecraft:sniffer_diggable_block` tag. Snou
 
 Changes that other mods or datapacks make to the vanilla `minecraft:gameplay/sniffer_digging` table still apply, because Snout's table includes it.
 
-## Config
-
-`config/snout.json` is created on first launch:
-
-```json
-{
-  "extraFinds": true
-}
-```
-
-Set `extraFinds` to `false` to make sniffers use the vanilla loot table. The extra dig blocks still apply, because tags are data, so sniffers can still dig them but only find vanilla seeds there. Restart the game or server after changing it.
-
 ## Building
 
 ```bash

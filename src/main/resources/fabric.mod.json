@@ -10,11 +10,6 @@
 	"license": "CC0-1.0",
 	"icon": "assets/snout/icon.png",
 	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"maihatsuu.snout.Snout"
-		]
-	},
 	"mixins": [
 		"snout.mixins.json"
 	],
